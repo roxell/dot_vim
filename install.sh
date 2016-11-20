@@ -1,8 +1,10 @@
 #!/bin/bash
 
+reporoot=$(readlink -f $(dirname $0))
+
 install_files=(
-    "$HOME/.vim:$HOME/etc/dot_vim"
-    "$HOME/.vimrc:$HOME/etc/dot_vim/vimrc"
+    "$HOME/.vim:${reporoot}"
+    "$HOME/.vimrc:${reporoot}/vimrc"
 )
 
 for target in ${install_files[@]}; do
@@ -51,7 +53,7 @@ for target in ${install_files[@]}; do
 done
 
 mkdir -p $HOME/.vim/bundle
-$HOME/etc/dot_vim/autoload/install.sh
+${reporoot}/autoload/install.sh
 
 ###############################################################################
 # vim: set ts=4 sw=4 sts=4 et                                                 :

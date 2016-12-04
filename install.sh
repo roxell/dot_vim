@@ -11,6 +11,8 @@ install_files=(
     "$HOME/bin/haste:${reporoot}/haste"
 )
 
+mkdir -p $HOME/bin
+
 create_symlink
 
 mkdir -p $HOME/.vim/bundle

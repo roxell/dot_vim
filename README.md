@@ -6,7 +6,7 @@ Configuration files for vim.
  - vim
 
 # Optional Dependencies
- - xclip
+ - xsel
 
 # Usage
 $ ./install.sh

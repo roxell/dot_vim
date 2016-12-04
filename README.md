@@ -5,5 +5,8 @@ Configuration files for vim.
  - curl
  - vim
 
+# Optional Dependencies
+ - xclip
+
 # Usage
 $ ./install.sh

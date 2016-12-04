@@ -427,6 +427,10 @@ if has("eval")
         setlocal relativenumber
     endfun
 
+    function HasteUpload() range
+        echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| haste | xsel -ib')
+    endfunction
+
     function! FixLastSpellingError()
         normal! mm[s1z=`m
     endfunction

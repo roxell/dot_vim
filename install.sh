@@ -8,6 +8,7 @@ source install-lib
 install_files=(
     "$HOME/.vim:${reporoot}"
     "$HOME/.vimrc:${reporoot}/vimrc"
+    "$HOME/bin/haste:${reporoot}/haste"
 )
 
 create_symlink

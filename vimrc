@@ -19,6 +19,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'neomake/neomake'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
+Plug 'brooth/far.vim'
 " Git helpers
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'

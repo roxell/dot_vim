@@ -20,6 +20,7 @@ Plug 'neomake/neomake'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'brooth/far.vim'
+Plug 'will133/vim-dirdiff'
 " Git helpers
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'

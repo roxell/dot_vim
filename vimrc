@@ -429,6 +429,12 @@ if has("eval")
         setlocal relativenumber
     endfun
 
+    " Insert a timestamp under the cursor
+    function! LogbookTimestamp()
+        "execute "normal! O" . strftime("%c") . "\n- \n\<ESC>k$"
+        execute "normal! O" . "-------------------\n" . strftime("%Y-%m-%d %H:%M:%S") . "\n-------------------\n- \n\<ESC>k$"
+    endfunction
+
     function HasteUpload() range
         echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| haste | xsel -ib')
     endfunction
@@ -581,6 +587,7 @@ let g:miniBufExplWinFixHeight = 1
 "------------------------------------------------------------------------------
 
 command! MakeTags !ctags -R .
+command! -nargs=0 Ts call LogbookTimestamp()
 
 " Don't highlight searches when just having entered Vim
 au VimEnter * nohls

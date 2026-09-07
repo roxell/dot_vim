@@ -8,11 +8,9 @@ source install-lib
 install_files=(
     "$HOME/.vim:${reporoot}"
     "$HOME/.vimrc:${reporoot}/vimrc"
-    "$HOME/bin/haste:${reporoot}/haste"
     "$HOME/.config/nvim/init.vim:${reporoot}/nvim/init.vim"
 )
 
-mkdir -p $HOME/bin
 mkdir -p $HOME/.config/nvim
 
 create_symlink

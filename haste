@@ -1,4 +1,0 @@
-#!/bin/bash
-url="https://hastebin.com"
-key="$(curl --silent --insecure --data-binary @/dev/fd/0  $url/documents | cut -d "\"" -f 4)"
-echo "$url/$key"

@@ -5,8 +5,5 @@ Configuration files for vim.
  - curl
  - vim
 
-# Optional Dependencies
- - xsel
-
 # Usage
 $ ./install.sh

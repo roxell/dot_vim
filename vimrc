@@ -474,10 +474,6 @@ if has("eval")
         execute "normal! O" . "-------------------\n" . strftime("%Y-%m-%d %H:%M:%S") . "\n-------------------\n- \n\<ESC>k$"
     endfunction
 
-    function HasteUpload() range
-        echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| haste | xsel -ib')
-    endfunction
-
     function! FixLastSpellingError()
         normal! mm[s1z=`m
     endfunction

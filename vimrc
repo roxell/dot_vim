@@ -32,6 +32,12 @@ Plug 'sotte/presenting.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'XadillaX/json-formatter.vim'
+" AI coding agents, neovim only
+if has('nvim')
+    Plug 'folke/snacks.nvim'
+    Plug 'coder/claudecode.nvim'
+    Plug 'NickvanDyke/opencode.nvim'
+endif
 call plug#end()
 
 filetype on

@@ -31,6 +31,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'sotte/presenting.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'XadillaX/json-formatter.vim'
 call plug#end()
 
 filetype on

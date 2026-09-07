@@ -9,3 +9,7 @@ set runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
 source ~/.vim/vimrc
+
+" AI agents, needs the neovim only plugins from the vimrc
+runtime nvim/ai.lua
+

@@ -99,6 +99,9 @@ set whichwrap+=<,>,[,]
 " Update rate 250ms instead of 4sec, better for GitGutter
 set updatetime=250
 
+" No double spaces after .?!
+set nojoinspaces
+
 " Enable syntax highlighting
 syntax on
 

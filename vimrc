@@ -38,6 +38,14 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Pick one for the plugin path:
+set runtimepath+=~/src/roxcal
+
+let g:roxcal_command = 'roxcal'
+
+nnoremap <silent> <leader>ga :RoxcalAgenda<CR>
+nnoremap <silent> <leader>gn :RoxcalAdd<CR>
+
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 

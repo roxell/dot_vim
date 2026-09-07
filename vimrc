@@ -145,6 +145,14 @@ if has("eval")
             endif
         endif
     endif
+
+    " Neovim turns termguicolors on by itself when the terminal can do it.
+    " But inkpot only sets gui colours when a real gui is running, so nvim
+    " finds none and falls back to its own defaults. Use the cterm colours
+    " instead, then nvim looks the same as vim.
+    if has('nvim')
+        set notermguicolors
+    endif
 endif
 
 "colorscheme inkpot

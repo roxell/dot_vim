@@ -406,6 +406,15 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
+" Terminal mode is unsupported by the plugin, so leave it first. Neovim
+" only, vim does not use terminal windows here.
+if has('nvim')
+    tnoremap <silent> <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+    tnoremap <silent> <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
+    tnoremap <silent> <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
+    tnoremap <silent> <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+endif
+
 imap <C-h> <C-o>h
 imap <C-j> <C-o>j
 imap <C-k> <C-o>k

@@ -49,6 +49,10 @@ nnoremap <silent> <leader>gn :RoxcalAdd<CR>
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
+let g:snipMate = { 'snippet_version' : 1 }
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
+let g:snipMate.scope_aliases = {}
+
 "
 "-----------------------------------------------------------------------
 " terminal setup

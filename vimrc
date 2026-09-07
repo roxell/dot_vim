@@ -27,6 +27,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Taking notes
 Plug 'vimwiki/vimwiki'
+" Presentation
+Plug 'sotte/presenting.vim'
 call plug#end()
 
 filetype on
@@ -593,6 +595,9 @@ command! -nargs=0 Ts call LogbookTimestamp()
 
 " Don't highlight searches when just having entered Vim
 au VimEnter * nohls
+
+" presentation
+"au FileType rst let b:presenting_slide_separator = '\v(^|\n)\~{4,}'
 
 "-----------------------------------------------------------------------
 " vim: set shiftwidth=4 softtabstop=4 expandtab tw=120                 :

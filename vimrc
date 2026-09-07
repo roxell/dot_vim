@@ -474,6 +474,21 @@ if has("eval")
         execute "normal! O" . "-------------------\n" . strftime("%Y-%m-%d %H:%M:%S") . "\n-------------------\n- \n\<ESC>k$"
     endfunction
 
+    " Upload the selected lines as a secret gist and copy the url. Needs
+    " the gh tool, it handles the github login so we keep no token here.
+    function! GistUpload() range
+        let l:name = empty(expand('%:t')) ? 'snippet.txt' : expand('%:t')
+        let l:text = join(getline(a:firstline, a:lastline), "\n")
+        let l:out = trim(system('gh gist create --filename ' . shellescape(l:name) . ' -', l:text))
+        if v:shell_error
+            echohl ErrorMsg | echo 'gist upload failed: ' . l:out | echohl None
+            return
+        endif
+        call setreg('+', l:out)
+        echo l:out
+    endfunction
+    command! -range=% Gist <line1>,<line2>call GistUpload()
+
     function! FixLastSpellingError()
         normal! mm[s1z=`m
     endfunction

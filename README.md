@@ -5,5 +5,8 @@ Configuration files for vim.
  - curl
  - vim
 
+# Optional Dependencies
+ - gh, for the :Gist command
+
 # Usage
 $ ./install.sh

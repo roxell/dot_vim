@@ -285,8 +285,10 @@ set wildmenu
 set wildignore+=*.o,*~,.lo
 set suffixes+=.in,.a,.1
 
-" Syntax when printing
-set popt+=syntax:y
+" Syntax when printing, neovim has no :hardcopy so no 'printoptions'
+if exists('&popt')
+    set popt+=syntax:y
+endif
 
 " Enable folds
 if has("folding")

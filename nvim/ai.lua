@@ -68,6 +68,10 @@ map("n", "<leader>as", function()
 	agent("send")()
 end, { desc = "AI: send line" })
 
+map("n", "<leader>a?", function()
+	require("snacks").picker.keymaps()
+end, { desc = "AI: show the keymaps" })
+
 map("n", "<leader>ag", function()
 	vim.g.active_agent = vim.g.active_agent == "claude" and "opencode" or "claude"
 	vim.notify("AI agent: " .. vim.g.active_agent)

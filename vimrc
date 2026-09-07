@@ -25,6 +25,8 @@ Plug 'will133/vim-dirdiff'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Taking notes
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 filetype on

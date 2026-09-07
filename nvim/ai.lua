@@ -1,7 +1,7 @@
 -- AI coding agents: claude code and opencode.
 --
 -- Both run in a terminal split on the right. The keymaps under <leader>a
--- are shared, and <leader>ax picks which agent they talk to.
+-- are shared, and <leader>ag picks which agent they talk to.
 
 -- vim-plug has not installed the plugins yet on a fresh checkout.
 if not pcall(require, "snacks") then
@@ -57,9 +57,9 @@ end
 
 local map = vim.keymap.set
 
-map("n", "<leader>at", agent("toggle"), { desc = "AI: toggle terminal" })
+map("n", "<leader>aa", agent("toggle"), { desc = "AI: open or close the agent" })
 map("n", "<leader>af", agent("add_file"), { desc = "AI: add file to context" })
-map("n", "<leader>am", agent("select"), { desc = "AI: model select" })
+map("n", "<leader>am", agent("select"), { desc = "AI: pick model" })
 map("x", "<leader>as", agent("send"), { desc = "AI: send selection" })
 
 -- claude sends a range, so select the line first when we come from normal mode.
@@ -68,7 +68,7 @@ map("n", "<leader>as", function()
 	agent("send")()
 end, { desc = "AI: send line" })
 
-map("n", "<leader>ax", function()
+map("n", "<leader>ag", function()
 	vim.g.active_agent = vim.g.active_agent == "claude" and "opencode" or "claude"
 	vim.notify("AI agent: " .. vim.g.active_agent)
 end, { desc = "AI: switch agent" })

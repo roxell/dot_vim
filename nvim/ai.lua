@@ -15,8 +15,22 @@ require("snacks").setup({
 	terminal = { enabled = true },
 })
 
+local function claude_cmd()
+	local cmd = vim.fn.exepath("claude")
+	if cmd == "" then
+		cmd = "claude"
+	end
+	local root = vim.fs.root(vim.fn.getcwd(), ".git") or vim.fn.getcwd()
+	local project = vim.fn.fnamemodify(root, ":t")
+	local settings = vim.fn.expand("~/.claude/env/" .. project .. ".json")
+	if vim.fn.filereadable(settings) == 1 then
+		cmd = cmd .. " --settings " .. vim.fn.shellescape(settings)
+	end
+	return cmd
+end
+
 require("claudecode").setup({
-	terminal_cmd = vim.fn.exepath("claude"),
+	terminal_cmd = claude_cmd(),
 })
 
 local opencode_cmd = "opencode --port"

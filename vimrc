@@ -556,25 +556,29 @@ if has("autocmd")
         autocmd BufRead,BufNewFile  *.pcon setlocal ts=4 noexpandtab sts=4 sw=4
         autocmd BufRead,BufNewFile  *.yaml setlocal ts=4 expandtab sts=4 sw=4
 
-        autocmd BufNewFile *.py 0put ='# vim: set ts=8 sw=4 sts=4 et tw=80 fileencoding=utf-8 :' |
+        autocmd BufNewFile *.py if &modifiable |
+                    \ 0put ='# vim: set ts=8 sw=4 sts=4 et tw=80 fileencoding=utf-8 :' |
                     \ 0put ='#!/usr/bin/python' | set sw=4 sts=4 et tw=80 fenc=utf-8|
-                    \ norm G
+                    \ exe "norm G" | endif
 
-        autocmd BufNewFile *.h,*.hh call MakeIncludeGuards() | $put ='' |
+        autocmd BufNewFile *.h,*.hh if &modifiable |
+                    \ call MakeIncludeGuards() | $put ='' |
                     \ call MakeModeLineC() |
-                    \ set sw=4 sts=4 et tw=80 | norm G
+                    \ set sw=4 sts=4 et tw=80 | exe "norm G" | endif
 
-        autocmd BufNewFile *.c call setline(1, '#include "' .
+        autocmd BufNewFile *.c if &modifiable |
+                    \ call setline(1, '#include "' .
                     \ substitute(expand("%:t"), ".c$", ".h", "") . '"') |
                     \ $put ='' |
                     \ call MakeModeLineC() |
-                    \ set ts=8 sw=8 sts=8 noet tw=80 | norm G
+                    \ set ts=8 sw=8 sts=8 noet tw=80 | exe "norm G" | endif
 
-        autocmd BufNewFile *.cc call setline(1, '#include "' .
+        autocmd BufNewFile *.cc if &modifiable |
+                    \ call setline(1, '#include "' .
                     \ substitute(expand("%:t"), ".cc$", ".hh", "") . '"') |
                     \ $put ='' |
                     \ call MakeModeLineC() |
-                    \ set sw=4 sts=4 et tw=80 | norm G
+                    \ set sw=4 sts=4 et tw=80 | exe "norm G" | endif
 
         "        autocmd BufNewFile *.c call setline(1, '#include "' .
         "                    \ substitute(expand("%:t"), ".c$", ".h", "") . '"') |

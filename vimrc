@@ -65,7 +65,8 @@ let g:snipMate.scope_aliases = {}
 "-----------------------------------------------------------------------
 
 " Extra terminal things
-if (&term =~ "xterm") && (&termencoding == "")
+" neovim has no termencoding, it always uses utf-8
+if !has('nvim') && (&term =~ "xterm") && (&termencoding == "")
     set termencoding=utf-8
 endif
 

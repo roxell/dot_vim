@@ -155,6 +155,10 @@ if has("eval")
     endif
 endif
 
+if has('nvim')
+    set runtimepath+=~/src/stratoshark/nvim
+endif
+
 "colorscheme inkpot
 "colorscheme mydesert
 
